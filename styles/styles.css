@@ -1,7 +1,11 @@
-a{
-    margin-left: 50px;
+.btn-primary {
+    background-color: lightslategray;
+    border-color: black;
 }
-
+.btn-primary:hover {
+    background-color: lightgray;
+    border-color: black;
+}
 .but{
     margin-right: 50px;
 }
@@ -9,11 +13,28 @@ img {
     border-radius: 8px;
 }
 .center{
-    text-align:center;
+    text-align:left;
 
 }
-.tab { margin-left: 40px; }
+.tab { margin-left: 30px; }
 
-.col {
-    text-align: center;
+
+.navbar {
+    display: inline-block;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+}
+
+hr {
+    color: black;
+}
+
+
+
+
+.text {
+    text-decoration: none;
+}
+
