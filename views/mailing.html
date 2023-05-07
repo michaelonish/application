@@ -1,3 +1,21 @@
+<!--
+ *  By: Michael Onishchenko
+ *  @version 1.0
+ * Date: 5/5/2023
+ * Assignment: Job App II
+ * This is the mailing list file for this assignment that takes in input and sends information to post array
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--  import bootstrap files and css file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Application Page </title>
+</head>
 <h2>Job Openings Mailing Lists</h2>
 <hr>
 <form method="POST">
@@ -6,7 +24,7 @@
         <div class="row">
             <repeat group="{{ @languages }}" value="{{ @lang }}">
                 <div class="col-3">
-                    <input type="checkbox" name="mailinglist[]" value="{{ @lang }}" id="lang-{{ @lang }}">
+                    <input type="checkbox" name="mailing[]" value="{{ @lang }}" id="lang-{{ @lang }}">
                     <label for="lang-{{ @lang }}">{{ @lang }}</label>
                 </div>
             </repeat>
@@ -18,7 +36,7 @@
         <div class="row">
             <repeat group="{{ @verticals }}" value="{{ @vert }}">
                 <div class="col-3">
-                    <input type="checkbox" name="mailinglist[]" value="{{ @vert }}" id="vert-{{ @vert }}">
+                    <input type="checkbox" name="mailing[]" value="{{ @vert }}" id="vert-{{ @vert }}">
                     <label for="vert-{{ @vert }}">{{ @vert }}</label>
                 </div>
             </repeat>
