@@ -1,10 +1,57 @@
+<!--
+ *  By: Michael Onishchenko
+ *  @version 1.0
+ * Date: 4/18/2023
+ * Assignment: Job App I
+ * This is the summary.html file that takes in all previous data entered and displays it.
+ * submit does not have any action yet.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--  import bootstrap files and css file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Application Page </title>
 </head>
-<body>
 
-</body>
-</html>
+<h2>Summary</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <div>Name: {{ $_SESSION['fname'] }} {{ $_SESSION['lname'] }}</div> <hr>
+        <div>Email: {{ $_SESSION['email'] }}</div> <hr>
+        <div>State: {{ STATES[$_SESSION['state']] }}</div> <hr>
+        <div>Phone: {{ $_SESSION['phone'] }}</div> <hr>
+        <div>GitHub Link: <a href="{{ $_SESSION['github'] }}" target="_blank">{{ $_SESSION['github'] }}</a></div> <hr>
+        <div>Experience: {{ $_SESSION['years'] }} years</div> <hr>
+        <div>Willing to Relocate: {{ $_SESSION['relocate'] }}</div ><hr>
+        <div>Mailing Lists:
+            <check if="{{ isset($_SESSION['mailing']) }}">
+                <true>
+                    {{ implode(", ", $_SESSION['mailing']) }}
+                </true>
+                <false>
+                    <b>None</b>
+                </false>
+            </check>
+        </div>
+    </div>
+    <div class="col">
+        Bio:<br>
+        <div class="bg-white rounded p-2">
+            {{ $_SESSION['bio'] }}
+        </div>
+    </div>
+    <hr>
+    <form method="POST">
+        <div class="text-center">
+            <button class="btn btn-primary w-75">Submit my Application!</button>
+        </div>
+    </form>
+</div>
+

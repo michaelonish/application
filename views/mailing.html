@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<h2>Job Openings Mailing Lists</h2>
+<hr>
+<form method="POST">
+    <div class="form-group">
+        <strong>Software development jobs:</strong><br>
+        <div class="row">
+            <repeat group="{{ @languages }}" value="{{ @lang }}">
+                <div class="col-3">
+                    <input type="checkbox" name="mailinglist[]" value="{{ @lang }}" id="lang-{{ @lang }}">
+                    <label for="lang-{{ @lang }}">{{ @lang }}</label>
+                </div>
+            </repeat>
+        </div>
+    </div>
 
-</body>
-</html>
+    <div class="form-group">
+        <strong>Industry verticals:</strong><br>
+        <div class="row">
+            <repeat group="{{ @verticals }}" value="{{ @vert }}">
+                <div class="col-3">
+                    <input type="checkbox" name="mailinglist[]" value="{{ @vert }}" id="vert-{{ @vert }}">
+                    <label for="vert-{{ @vert }}">{{ @vert }}</label>
+                </div>
+            </repeat>
+        </div>
+    </div>
+    <hr>
+    <div class="text-center">
+        <button class="btn btn-primary px-4">Next</button>
+    </div>
+</form>
