@@ -25,14 +25,14 @@
         <div class="col-8">
             <div class="row">
                 <div class="form-group col-6">
-                    <label for="fname">First Name</label>
+                    <label for="fname"><b>First Name</b></label>
                     <input name="fname" id="fname" class="form-control" required>
                     <?php if (isset($_SESSION['error']) && $_SESSION['error'] === 'Invalid First Name'): ?>
                     <span class="error">Invalid First Name</span>
                     <?php endif; ?>
                 </div>
                 <div class="form-group col-6">
-                    <label for="lname">Last Name</label>
+                    <label for="lname"><b>Last Name</b></label>
                     <input name="lname" id="lname" class="form-control" required>
                     <?php if (isset($_SESSION['error']) && $_SESSION['error'] === 'Invalid Last Name'): ?>
                     <span class="error">Invalid Last Name</span>
@@ -40,12 +40,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="email">Email Address</label>
+                <label for="email"><b>Email Address</b></label>
                 <input type="email" name="email" id="email" class="form-control" required>
             </div>
             <div class="row">
                 <div class="form-group col-6">
-                    <label for="state">State</label>
+                    <label for="state"><b>State</b></label>
                     <select name="state" id="state" class="form-control">
                         <repeat group="{{@states}}" key="{{@key}}" value="{{@val}}">
                             <check if="{{@key=='WA'}}">
@@ -58,12 +58,26 @@
                             </check>
                         </repeat>
                     </select>
+
                 </div>
                 <div class="form-group col-6">
-                    <label for="phone">Phone</label>
+                    <label for="phone"><b>Phone</b></label>
                     <input type="tel" name="phone" id="phone" class="form-control" required>
                 </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                <b>Choose expertise</b>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="PHP">
+                        Sign me up for new Job Openings
+                    </label>
+                </div>
+                </div>
+                </div>
             </div>
+
         </div>
         <div class="col-4">
             <div class="my-3"><strong>Note:</strong> All information entered is protected by our

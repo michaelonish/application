@@ -38,3 +38,39 @@ hr {
     text-decoration: none;
 }
 
+
+
+
+.navbar .nav-item:not(:last-child) {
+    margin-right: 35px;
+}
+.dropdown-toggle::after {
+    transition: transform 0.15s linear;
+}
+.show.dropdown .dropdown-toggle::after {
+    transform: translateY(3px);
+}
+.input-group-search {
+    width: 100% !important;
+}
+@media(min-width:576px) {
+    .navbar-expand-sm .input-group-search {
+        width: 100% !important;
+    }
+}
+@media(min-width:768px) {
+    .navbar-expand-md .input-group-search {
+        width: 90% !important;
+    }
+}
+@media(min-width:992px) {
+    .navbar-expand-lg .input-group-search {
+        width: 80% !important;
+    }
+
+}
+@media(min-width:1200px) {
+    .navbar-expand-xl .input-group-search {
+        width: 70% !important;
+    }
+}
