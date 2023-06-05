@@ -1,0 +1,11 @@
+# .gitignore contains files
+# folders that should be excluded
+# from vendor directory
+
+
+# ignore vendor
+vendor/
+tmp/
+
+# ignore composer.lock
+composer.lock

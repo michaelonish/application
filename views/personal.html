@@ -68,15 +68,24 @@
                 <div class="row">
                     <div class="form-group col-6">
                 <b>Choose expertise</b>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="PHP">
-                        Sign me up for new Job Openings
-                    </label>
+
+                <div class="form-group col-6">
+                       <label for="mailingListsCheckbox">
+                           <input type="checkbox" id="mailingListsCheckbox" name="mailingListsCheckbox">
+                           Opt-in to receive mailing lists
+                       </label>
                 </div>
                 </div>
                 </div>
             </div>
+
+            <br><br>
+
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                Select image to upload:
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
 
         </div>
         <div class="col-4">
@@ -86,3 +95,4 @@
         </div>
     </div>
 </form>
+

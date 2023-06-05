@@ -47,4 +47,3 @@ function validSelectionsVerticals($selectedVerticals, $validOptions)
 
 
 
-?>

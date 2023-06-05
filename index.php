@@ -24,6 +24,37 @@ $f3->route('GET /', function () {
     echo $view->render('views/home.html');
 });
 
+$f3->route('GET|POST /personal', function ($f3, $fullName, $email) {
+    // ...
+
+    // Handle the opt-in checkbox for mailing lists
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $optInCheckbox = $_POST['mailingListsCheckbox'] ?? '';
+        $_SESSION['optInMailingLists'] = $optInCheckbox === 'on';
+
+        // Create the applicant object
+        $applicant = new Applicant($fullName, $email);
+
+        if ($_SESSION['optInMailingLists']) {
+            // If user has opted in, create ApplicantSubscribedToLists object
+            // and pass the subscribed lists
+            $subscribedToLists = ['list1', 'list2', 'list3']; // Replace with actual subscribed lists
+            $applicant = new ApplicantSubscribedToLists($fullName, $email, $subscribedToLists);
+        }
+
+        $_SESSION['applicant'] = $applicant;
+
+        // Redirect to the appropriate form page based on the current form state
+        $formState = $_SESSION['formState'];
+        $view = new Template();
+        echo $view->render(FORM_STATES[$formState]);
+    } else {
+        // Redirect to summary page if the form is accessed directly without submitting
+        $f3->reroute('/summary');
+    }
+});
+
+
 $f3->route('GET|POST /personal', function ($f3) {
     if (!array_key_exists("formState", $_SESSION) || !array_key_exists($_SESSION["formState"], FORM_STATES)) {
         $_SESSION = array();
