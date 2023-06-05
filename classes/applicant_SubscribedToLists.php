@@ -1,19 +1,60 @@
 <?php
 
 namespace classes;
+use applicant;
 
-class ApplicantSubscribedToLists extends Applicant
+/**
+ * Represents an applicant subscribed to mailing lists.
+ */
+class Applicant_SubscribedToLists extends Applicant
 {
-    private $subscribedToLists;
+    /**
+     * @var array The selected jobs for the applicant.
+     */
+    private $_selectionsJobs;
 
-    public function __construct($name, $email, $subscribedToLists)
+    /**
+     * @var array The selected verticals for the applicant.
+     */
+    private $_selectionsVerticals;
+
+    /**
+     * Sets the selected jobs for the applicant.
+     *
+     * @param array $selectionsJobs The selected jobs for the applicant.
+     */
+    public function setSelectionsJobs($selectionsJobs)
     {
-        parent::__construct($name, $email);
-        $this->subscribedToLists = $subscribedToLists;
+        $this->_selectionsJobs = $selectionsJobs;
     }
 
-    public function getSubscribedToLists()
+    /**
+     * Gets the selected jobs for the applicant.
+     *
+     * @return array The selected jobs for the applicant.
+     */
+    public function getSelectionsJobs()
     {
-        return $this->subscribedToLists;
+        return $this->_selectionsJobs;
+    }
+
+    /**
+     * Sets the selected verticals for the applicant.
+     *
+     * @param array $selectionsVerticals The selected verticals for the applicant.
+     */
+    public function setSelectionsVerticals($selectionsVerticals)
+    {
+        $this->_selectionsVerticals = $selectionsVerticals;
+    }
+
+    /**
+     * Gets the selected verticals for the applicant.
+     *
+     * @return array The selected verticals for the applicant.
+     */
+    public function getSelectionsVerticals()
+    {
+        return $this->_selectionsVerticals;
     }
 }

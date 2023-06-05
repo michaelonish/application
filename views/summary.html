@@ -42,12 +42,11 @@
         </div>
     </div>
 
+
     <div class="col">
-        <img src = "images/png.png"  width="200"
-                          height="200" alt="Picture of profile">
+        <img src="{{ $_SESSION['uploadedImage'] }}" width="200" height="200" alt="Picture of profile">
         Bio:<br>
         <div class="bg-white rounded p-2">
-            {{ $_SESSION['bio'] }}
         </div>
     </div>
     <hr>
